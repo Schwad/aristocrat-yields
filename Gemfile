@@ -7,6 +7,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'mechanize'
+gem 'httparty'
+
 group :development, :test do
   gem 'byebug'
 end
@@ -19,9 +22,6 @@ gem 'unicorn'
 gem 'unicorn-rails'
 group :development do
   gem 'better_errors'
-  gem 'guard-bundler'
-  gem 'guard-rails'
-  gem 'guard-rspec'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false

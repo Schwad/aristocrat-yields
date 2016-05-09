@@ -1,10 +1,7 @@
 Spbest
 ================
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+This is a Schwad application, to show day-to-day which S&P Aristocrat stocks have the best return. This was part of Schwad's upcoming post to show his first foray into building an NGROK Tunnel and hosting this application off of one of his spare machines. To add an extra layer of trickiness it's an old windows laptop.
 
 Problems? Issues?
 -----------
