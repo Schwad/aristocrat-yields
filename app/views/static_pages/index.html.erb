@@ -12,8 +12,9 @@
   <div class="column">
     <table>
       <thead>
-        <th></th>
-        <th></th>
+        <th>
+          <h4>Rank</h4>
+        </th>
         <th>
           <h4>Symbol</h4>
         </th>
@@ -28,10 +29,13 @@
         </th>
       </thead>
       <tbody>
+        <% rank_counter = 1 %>
         <% @quotes.each do |quote| %>
           <tr>
-            <td></td>
-            <td></td>
+            <td>
+              <strong><%= rank_counter %></strong>
+              <% rank_counter += 1 %>
+            </td>
             <td>
               <strong><%= quote.symbol %></strong>
             </td>
@@ -42,7 +46,7 @@
               <% if quote.day_change < 0.0 %>
                 <strong style="color:red;"><%= quote.day_change %>%</strong>
               <% else %>
-                <strong style="color:green;"><%= quote.day_change %>%</strong>
+                <strong style="color:green;">+<%= quote.day_change %>%</strong>
               <% end %>
             </td>
             <td>

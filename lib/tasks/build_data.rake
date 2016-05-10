@@ -31,7 +31,7 @@ task build_out_symbols: :environment do
           quote.yesterday_value = quote.idealness
         end
 
-        quote.day_change = (((quote.idealness - quote.yesterday_value) / quote.yesterday_value) * 100).round(3)
+        quote.day_change = (quote.idealness - quote.yesterday_value).round(3)
 
         if quote.idealness > quote.best_rate
           quote.best_rate = quote.idealness
