@@ -7,14 +7,17 @@ task first_build: :environment do
 
 
   @sp_symbols.each do |symbol|
+    sleep 1.5
     puts "now doing symbol #{symbol}"
     #get JSON
     new_url = @basic_url + symbol
     response = HTTParty.get(new_url)
+    sleep 1
     parsed_resp = JSON.parse(response)
 
     #get last dividend
     a = Mechanize.new
+    sleep 1
     a = a.get("http://www.nasdaq.com/symbol/#{symbol}/dividend-history")
     quarterly_dividend = a.search('span#quotes_content_left_dividendhistoryGrid_CashAmount_0').text.to_f
 
@@ -25,6 +28,7 @@ task first_build: :environment do
   end
 
   @sp_data_hash.each do |key, value|
+     sleep 2
       new_quote = Quote.new
       new_quote.symbol = key
       new_quote.idealness = (value * 400).round(3)
@@ -58,6 +62,7 @@ task build_out_symbols: :environment do
 
           #get last dividend
           a = Mechanize.new
+          sleep 1
           a = a.get("http://www.nasdaq.com/symbol/#{quote.symbol}/dividend-history")
           quarterly_dividend = a.search('span#quotes_content_left_dividendhistoryGrid_CashAmount_0').text.to_f
 

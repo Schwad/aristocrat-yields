@@ -43,7 +43,7 @@
               <strong><%= quote.idealness %>%</strong>
             </td>
             <td>
-              <% if quote.day_change < 0.0 %>
+              <% if quote.day_change.to_i < 0.0 %>
                 <strong style="color:red;"><%= quote.day_change %>%</strong>
               <% else %>
                 <strong style="color:green;">+<%= quote.day_change %>%</strong>
