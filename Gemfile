@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'mechanize'
 gem 'httparty'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
