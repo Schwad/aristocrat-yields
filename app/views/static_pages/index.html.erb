@@ -30,7 +30,14 @@
       </thead>
       <tbody>
         <% rank_counter = 1 %>
+        <% checked = false %>
         <% @quotes.each do |quote| %>
+          <% if quote.best_rate < 1.51 && checked == false %>
+            <tr>
+              <td colspan="5" style="text-align: center; background-color:red;"><h4><strong>INFLATION CUTOFF POINT</strong></h4></td>
+            </tr>
+            <% checked = true %>
+          <% end %>
           <tr>
             <td>
               <strong><%= rank_counter %></strong>
@@ -43,7 +50,7 @@
               <strong><%= quote.idealness %>%</strong>
             </td>
             <td>
-              <% if quote.day_change.to_i < 0.0 %>
+              <% if quote.day_change.to_s.to_f < 0.0 %>
                 <strong style="color:red;"><%= quote.day_change %>%</strong>
               <% else %>
                 <strong style="color:green;">+<%= quote.day_change %>%</strong>
