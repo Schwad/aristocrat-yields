@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
+    authenticate
     @quotes = Quote.order(idealness: :desc)
 
   end

@@ -38,7 +38,7 @@ task first_build: :environment do
 end
 
 task build_out_symbols: :environment do
-  while true do
+  # while true do
     begin
       puts "Now raking at #{Time.now}...."
         @sp_symbols = ["MMM", "AFL", "ABBV", "ABT", "APD", "ADM", "T", "ADP", "BCR", "BDX", "BMS", "B", "CAH", "CB", "CVX", "CINF", "CTAS", "CLX", "KO", "CL", "ED", "DOV", "ECL", "EMR", "XOM", "BEN", "GPC", "GWW", "HCP", "HRL", "ITW", "JNJ", "KMB", "LEG", "LOW", "MKC", "MCD", "SPGI", "MDT", "NUE", "PPG", "PEP", "PNR", "PG", "SHW", "SWK", "SYY", "TROW", "TGT", "VFC", "WMT", "WBA"]
@@ -97,6 +97,6 @@ task build_out_symbols: :environment do
       #   new_quote.idealness = (value * 400).round(3)
       #   new_quote.save
       # end
-    sleep 300
-  end
+    # sleep 300
+  # end
 end
